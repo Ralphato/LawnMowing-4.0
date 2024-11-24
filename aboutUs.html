@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weMow - About Us</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eddc;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #416c29;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999; 
+        }
+
+        .logo img {
+            height: 190px;
+            width: auto;
+        }
+
+        /* Navigation */
+        .nav-bar ul {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-bar ul li a {
+            display: block;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .nav-bar ul li a:hover {
+            opacity: 75%;
+        }
+
+        .nav-bar ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-bar ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger .line {
+                width: 30px;
+                height: 3px;
+                background: black;
+                margin: 6px 0;
+            }
+
+            .nav-bar {
+                height: 0;
+                position: absolute;
+                top: 130px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                transition: 0.5s;
+                overflow: hidden;
+                background-color: rgb(185, 88, 88);
+            }
+
+            .nav-bar.active {
+                height: 300px;
+                transition: height 0.5s ease-in-out;
+            }
+
+            .nav-bar ul {
+                display: block;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .nav-bar.active ul {
+                opacity: 1;
+            }
+        }
+
+        /* Main section */
+        .main-section {
+            max-width: 1100px;
+            margin: 120px auto 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .main-section h1, .main-section h2 {
+            transition: color 0.3s ease;
+        }
+
+        .main-section h1:hover, .main-section h2:hover {
+            color: #145227;
+        }
+
+        .main-section h1 {
+            font-size: 30px;
+            color: #416c29;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main-section h2 {
+            font-size: 22px;
+            color: #416c29;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .main-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+          
+        }
+
+        .main-section li {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+
+        }
+
+        /* Service image */
+        .service-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .schedule-button {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+      }
+
+    .schedule-button .buy-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #006400;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 50px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .schedule-button .buy-button:hover {
+        background-color: #0a3d17; /* Darker green on hover */
+        transform: translateY(-5px); /* Moves the button up on hover */
+    }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: #416c29;
+            color: white;
+        }
+
+        /* Scrollbar Styling for Webkit Browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Background color of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #416c29; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #0c491c; /* Color when hovering over the scrollbar */
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thick;
+            scrollbar-color: #416c29 #f1f1f1;
+        }
+
+    </style>
+
+  <link rel="stylesheet" href="modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "i2JahWgYPMJgOlK9h",
+      });
+  })();
+</script>
+    <script src="emailScript.js"></script>
+    <script src="modalScript.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Video/WElgrb.png" alt="weMow Logo">
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#services">Our Services</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <h1> weMow: Your Lawn, Elevated </h1>
+
+        <div class="service-image">
+            <img src="images/weMow-logo.png" alt="weMow Logo">
+        </div>
+
+
+        <h2>Our Mission</h2>
+        <p>We're dedicated to enhancing the beauty and value of your property through exceptional lawn care services. By combining expert techniques with sustainable practices, we strive to create lush, healthy lawns that are both visually appealing and environmentally friendly. We're committed to building lasting relationships with our customers, providing personalized service and open communication.</p>
+        <h2>Our Vision</h2>
+        <p>We aspire to be the leading provider of lawn care services, setting the industry standard for quality, reliability, and customer satisfaction. By consistently delivering exceptional results, we aim to become the trusted partner for homeowners and businesses alike. Our vision is to create a greener, more vibrant community, one lawn at a time.</p>
+        <h2>Our Services</h2>
+          <ul>
+              <li><strong>Lawn Mowing:</strong> Keep your lawn looking pristine with our regular mowing services.</li>
+              <li><strong>Hedge Trimming:</strong> Enhance the curb appeal of your property with professional hedge trimming.</li>
+              <li><strong>Garden Maintenance:</strong> Maintain a beautiful garden with our comprehensive garden maintenance services.</li>
+          </ul>
+        <h2> Areas Covered: </h2>
+          <ul>
+            <li>📍Mobile</li>
+            <li>📍Daphne</li>
+            <li>📍Fairhope</li>
+            <li>📍Spanish Fort</li>
+            <li>📍Saraland</li>
+          </ul>
+
+        <h2>Ready to Experience the weMow Difference?</h2>
+        <p>Contact us today to schedule a consultation and let us transform your lawn into a masterpiece.</p>
+    
+        <p>Phone: (251) 123-4567</p>
+        <p>Email: info@wemow.com</p>
+        <p>Website: www.wemow.com</p>
+        <div class="schedule-button">
+          <a class="buy-button quote-modal" >Schedule a Service</a>
+      </div>
+
+
+      <div id="loading-screen" style="display: none;">
+        <div class="loading-content">
+          <div class="spinner"></div>
+          <p>Sending email, please wait...</p>
+        </div>
+      </div>
+        
+      <div id="popup" class="popup" style="display: none;">
+        <p id="popup-message"></p>
+      </div>
+      <!-- Modal for "Get a Quote" -->
+<div id="quoteModal" class="modal">
+  
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="padder">
+      <div class="logo-container">
+        <img src="logo8-new.png" class="modal-logo" alt="Company Logo">
+      </div>
+    </div>
+
+        <!-- Step Progress Bar -->
+      <!-- Step Progress Bar -->
+      <div class="progress-container">
+        <div class="step active" id="step-1">1</div>
+        <div class="bar active"></div>
+        <div class="step" id="step-2">2</div>
+      </div>
+  
+       <!-- Step 1 Form Content -->
+       <div id="step-content-1" class="step-content">
+        <h2 class="modal-title">Our Services</h2>
+        <p class="modal-text">Please select which service you are interested in.</p>
+        <div class="service-selection">
+          <div class="service-box lawnus" onclick="currentService('LawnMowing'); currentServiceModal('LawnMowing')">
+            <div class="service-content">
+              <img src="lawn-quote.png" alt="Lawn Mowing" class="service-icon">
+              <p class="service-title">Lawn Mowing</p>
+          </div>
+          </div>
+          <div class="service-box" onclick="currentService('HedgeTrimming')">
+            <div class="service-content">
+              <img src="garden-quote.png" alt="Web Design" class="service-icon garden-icon">
+              <p>Garden Maintenance</p>
+            </div>
+          </div>
+          <div class="service-box" onclick="currentService('GardenMaintenance')">
+            <div class="service-content">
+              <img src="hedge-quote.png" alt="Marketing" class="service-icon">
+              <p>Hedge Trimming</p>
+            </div> 
+          </div>
+          <div class="service-box" onclick="currentService('Other')">
+            <div class="service-content">
+              <img  alt="Other" class="service-icon">
+              <p>Other</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- Step 2 Form Content (pop up one) -->
+    <div id="step-content-2" class="step-content" style="display:none;">
+      <h2 class="modal-title">Contact Information</h2>
+      <form class="modal-quote-form">
+        <div class="modal-form-row">
+          <input type="text" id="name2" placeholder="Name" required>
+          <input type="number" id="number2" placeholder="Phone Number" required>
+        </div>
+        <input type="email" id="email2" placeholder="Email" required>
+        <input type="text" id="location2" placeholder="Location" required>
+        <textarea id="message2" class="textarea2" placeholder="Details(optional)"></textarea>
+        <button type="submit" id="submit2" onclick="checkParam2()">Get Quote</button>
+    </form>
+    </div>
+
+    <!-- Next Button -->
+    <button id="nextStepButton" class="next-btn">Next Step</button>
+  </div>
+</div>
+    </section>
+
+    <footer>
+        &copy; 2024 weMow. All Rights Reserved.
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navBar = document.querySelector(".nav-bar");
+
+        hamburger.addEventListener("click", () => {
+            navBar.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
