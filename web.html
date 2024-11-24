@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar using HTML, CSS & JavaScript</title>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "i2JahWgYPMJgOlK9h",
+          });
+      })();
+    </script>
+    <script src="emailScript.js"></script>
+    <script src="modalScript.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <img src="Images/logo8.png" alt="Logo">
+    </div>
+
+    <div class="filler">
+      
+  </div>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#" class="home">Home</a></li>
+            <div class="dropdown">
+                <li><a class="dropbtn">Services<span class="downArrow">▾</span></a></li>
+                <div class="dropdown-content">
+                    <a href="Service(LawnCare).html">Lawn Mowing</a>
+                    <a href="landscaping.html">Landscaping</a>
+                    <a href="#">Watering</a>
+                </div>
+            </div>
+            <li><a href="#" class="pricing">Pricing</a></li>
+            <li><a href="aboutUs.html" class="about">About</a></li>
+           <!--<li><a href="#" class="blogs">Blogs</a></li> --> 
+            <li><a href="#" class="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="schedule-header">SCHEDULE SERVICE</button>
+    <img class="header-logos" src="Images/header-logos.png" alt="Header Logos">
+</header>
+
+
+
+
+  <!--Section below navigation bar-->
+    <div class="welcome-dropdown">
+
+        <div class="overlay">
+          <img class = "header-image" src="Images/house-garden.webp">
+        </div>
+      <div class="dropdown-text">  
+        <span>
+          Welcome to WeMow! We are passionate about<br>
+          keeping your lawn looking its best. Contact us <br>
+          today to schedule your appointment.
+        </span>
+      </div>  
+      <div class="button-container">
+        <a class="quote-button quote-modal">Get a Quote</a>
+        <a href="contact.html" class="contact-button">Contact Us</a>
+      </div>
+    </div>
+    
+    <div class="arrow-down" id="arrowButton">
+      <img src="Images/arrow-right.png" class="arrow-image">
+    </div>
+
+
+  <div class="hero-wrapper">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>The Best Local Lawn Care Services</h1>
+          <p>
+            If you're looking for a fantastic, reliable lawn care service, you’ve come to the right place. We do things differently here at Lawn Love. We are taking a high-tech approach to a traditionally low tech sector, and are revolutionizing the lawn care industry. Our skilled, independent lawn pros will provide a lawn care service that is perfectly tailored to the needs of your lawn, from one-time lawn mowing to ongoing lawn care maintenance and yard clean up.  </p>
+          <div class="hero-buttons">
+            <a href="get-quote.html" class="hero-button">Learn More</a>
+            <a href="our-work.html" class="hero-button">View Our Work</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="Images/hero-image.jpg" alt="Lawn Care Service" />
+        </div>
+      </section>
+      
+  </div>
+    
+
+
+
+    <!-- Services -->
+  <section id="services">  
+  <div class="service-wrapper"> 
+
+    <h2 class="service-header">Our <span class="fancy-service">Services </span></h2>
+
+    <!-- Lawn Mowing Section -->
+    <section id="lawn-mowing-section">
+      <div class="lawn-background"></div>
+      <div class="overlay2"></div>
+      <div class="lawn-mowing-content">
+          <h1>Lawn Mowing</h1>
+          <p>Keep your lawn looking pristine and well-maintained with our professional lawn mowing services. We offer customized care for every yard to ensure a perfect cut every time.</p>
+          <div class="lawn-button-container">
+              <a  class="lawn-quote-button quote-modal" >Get a Quote</a>
+              <a href="Service(LawnCare).html" class="lawn-service-button">View Service</a>
+          </div>
+      </div>
+    </section>
+
+
+    <!-- Hedge Trimming Section -->
+    <section id="hedge-trimming-section">
+      <div class="hedge-background"></div>
+      <div class="overlay2"></div>
+      <div class="hedge-trimming-content">
+          <h1>Hedge Trimming</h1>
+          <p>Enhance the beauty of your garden with our expert hedge trimming services. We shape and trim hedges to perfection, giving your landscape a well-manicured look.</p>
+          <div class="hedge-button-container">
+              <a class="hedge-quote-button quote-modal">Get a Quote</a>
+              <a href="services.html" class="hedge-service-button">View Service</a>
+          </div>
+      </div>
+    </section>
+
+
+
+    <!-- Garden Maintenance Section -->
+    <section id="garden-maintenance-section">
+      <div class="garden-background"></div>
+      <div class="overlay2"></div>
+      <div class="garden-maintenance-content">
+          <h1>Garden Maintenance</h1>
+          <p>Our comprehensive garden maintenance services include weeding, pruning, and seasonal planting to keep your garden flourishing throughout the year.</p>
+          <div class="garden-button-container">
+              <a class="garden-quote-button quote-modal">Get a Quote</a>
+              <a href="services.html" class="garden-service-button">View Service</a>
+          </div>
+      </div>
+    </section>
+
+
+  
+    <section class="quote-bonus-section">
+
+            <!-- Bonuses Section -->
+      <div class="bonuses-section">
+        
+        
+          <h2>Exclusive Bonuses</h2>
+          <p>Get more than just great service. Our bonuses reward you for choosing us, with special offers and discounts to help you save more! 
+              We believe in providing value that lasts, ensuring you're taken care of well beyond your initial service. 
+              Stay with us, and you'll continue to enjoy these perks for years to come.</p>
+          <ul class="bonuses-list">
+              <li> Free consultation for first-time clients</li>
+              <li> 10% off when you refer a friend</li>
+              <li> Seasonal discounts available – just ask!</li>
+              <li> Priority scheduling for repeat clients</li>
+              <li> Grandfathering of original service rates for loyal customers</li>
+              <li> No hidden fees, guaranteed transparency</li>
+          </ul>
+          
+      </div>
+
+      <div class="scheduler">
+        <p class="quote-title">GET A <span class="fancy-green">QUOTE</span></p>
+        <div class="contact-section">
+          <form class="contact-form">
+            <div class="form-row">
+              <input type="text" id="name" placeholder="Name" required>
+              <input type="number" id="number" placeholder="Phone Number" required>
+            </div>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <input type="text" id="service" placeholder="Service" required>
+            
+            <textarea id="message" placeholder="Details(optional)"></textarea>
+            <button type="submit" id="submit1" onclick="checkParam()">SCHEDULE A SERVICE</button>
+          </form>
+        </div>
+      </div>
+
+
+      
+    </section>
+
+    
+
+    
+
+    <!-- Blog section -->
+    <section class="blogs-section">
+
+        <!-- Blog content will go here -->
+        <div class="blog-header-container">
+          <h2 class="blog-header">Latest <span class="fancy-green">Blogs</span></h2>
+          
+            <div class="view-more-container">
+                <span class="view-more">View More</span>
+              <a href="allBlogs.html" class="view-more-link">
+                <img src="Images/frame.png" alt="Frame" class="frame-image">
+              </a>
+            </div>
+              </a>
+        </div>
+
+         
+        <div class="blogs-container">
+          <div class="blog-item">
+            <a href="lawnTips.html"></a>
+              <img src="Images/lownu" alt="Lawn Mowing Service"> <!--alt is used if image doesn't load-->
+              <h3>Lawn Care Tips and Tricks</h3>
+              <p>How to properly mow your lawn: best practices for a healthy lawn.</p>
+              <a href="lawnTips.html" class="read-more">Read More</a> <!-- Read More link -->
+            </a>
+          </div>
+          
+          <div class="blog-item">
+            <a href="maintenance.html"></a>
+            <img src="Images/garden.jpg">
+            <h3> Lawn Problems and Solutions</h3>
+            <p>Solutions for common lawn issues like brown patches, weeds, or overgrown grass.</p>
+            <a href="maintenance.html" class="read-more">Read More</a> <!-- Read More link -->
+          </div>
+        
+          <div class="blog-item">
+            <a href="Watering.html"></a>
+            <img src="Images/garden.jpg">
+            <h3>DIY vs. Professional Lawn Care</h3>
+            <p>-Pros and cons of DIY lawn care vs. hiring professionals. <br>
+              -When to consider professional services for your lawn.</p>
+            <a href="Watering.html" class="read-more">Read More</a> <!-- Read More link -->
+          </div>
+        </div>
+
+                 <!-- Additional View More button for smaller screens -->
+          <div class="view-more-container-mobile">
+            <span class="view-more">View More</span>
+            <a href="allBlogs.html" class="view-more-link">
+                <img src="frame.png" alt="Frame" class="frame-image">
+            </a>
+        </div>
+        
+        </div>
+
+
+    
+    </section> <!-- blogs-section-->
+
+
+
+</div> <!-- Service wrapper-->
+
+
+
+   <!-- <div class="testimonial-wrapper">  </div> -->
+    <section id="happy-customers">
+      
+      <div class="testimonial-container">
+          <h2>Testimonials</h2>
+          <h3>What our Customers have to say</h3>
+       
+          <div class="testimonial-carousel">
+              <!-- Left Arrow -->
+              <div class="arrow left-arrow" id="leftArrow">⟨</div> <!-- Unicode for left arrow -->
+  
+              <!-- Testimonial Wrapper -->
+              <div class="testimonials">
+                  <!-- Testimonial 1 -->
+                
+                  <div class="testimonial t1">
+                      <p>"T1"</p>
+                      <h4>- T1</h4>
+                  </div>
+  
+                  <!-- Testimonial 2 -->
+                  <div class="testimonial t2">
+                      <p>"T2"</p>
+                      <h4>- T2</h4>
+                  </div>
+  
+                  <!-- Testimonial 3 -->
+                  <div class="testimonial t3">
+                      <p>" T3"</p>
+                      <h4>-T3</h4>
+                  </div>
+
+                  <!-- Testimonial 4 -->
+                  <div class="testimonial t4">
+                    <p>"T4"</p>
+                    <h4>- test 4 </h4>
+                </div>
+
+                 <!-- Testimonial 5 -->
+                 <div class="testimonial t5">
+                  <p>"T5"</p>
+                  <h4>- test 5 </h4>
+              </div>
+
+               <!-- Testimonial 6 -->
+               <div class="testimonial t6">
+                <p>"T6"</p>
+                <h4>- test 6 </h4>
+            </div>
+              </div>
+  
+              <!-- Right Arrow -->
+              <div class="arrow right-arrow" id="rightArrow">⟩</div> <!-- Unicode for right arrow -->
+          </div>
+  
+          <!-- "View More" Button -->
+          <div class="arrow-container">
+            <div class="arrow new-left-arrow" id="leftArrow2">⟨</div>
+            <div class="arrow new-right-arrow" id="rightArrow2">⟩</div> 
+          </div>
+            <div class="view-more-container"></div>
+            <a href="#" class="view-more-button">View More</a>
+          </div>
+
+          
+      </div>
+   
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-section">
+      <div class="social-icons">
+          <a class="facebook" href="#"><img src="Images/facebook-icon.png" alt="Facebook"></a>
+          <a class="tiktok" href="#"><img src="Images/tiktok-icon.png" alt="TikTok"></a>
+          <a class="instagram" href="#"><img src="Images/instagram-icon.png" alt="Instagram"></a>
+          <a class="linkedin" href="#"><img src="Images/linkedin-icon.png" alt="Linked In"></a>
+        </div>
+    </div>
+    <div class="footer-container">
+        <!-- Call Us Section -->
+        <div class="footerfiller"></div>
+        <div class="footer-section">
+            <h4>Call us:</h4>
+            <p>1-800-000-0000</p>
+        </div>
+        <!-- Email Us Section -->
+        <div class="footer-section">
+            <h4>Email us:</h4>
+            <p>info@wemow.com</p>
+        </div>
+        <!-- Areas Covered Section -->
+        <div class="footer-section">
+            <h4>AREAS COVERED</h4>
+            <p>Mobile, AL<br>Surrounding Areas</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <p>Read Our Blog</p>
+      </div>
+    </div>
+    <p class="rights"> © 2024 by WeMow. All rights reserved. </p>
+    
+</footer>
+
+
+
+<!--LOADING SECTION-->
+
+<div id="loading-screen" style="display: none;">
+  <div class="loading-content">
+    <div class="spinner"></div>
+    <p>Sending email, please wait...</p>
+  </div>
+</div>
+  
+<div id="popup" class="popup" style="display: none;">
+  <p id="popup-message"></p>
+</div>
+
+
+<!-- Modal for "Get a Quote" -->
+<div id="quoteModal" class="modal">
+  
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="padder">
+      <div class="logo-container">
+        <img src="Images/logo8-new.png" class="modal-logo" alt="Company Logo">
+      </div>
+    </div>
+
+        <!-- Step Progress Bar -->
+      <!-- Step Progress Bar -->
+      <div class="progress-container">
+        <div class="step active" id="step-1">1</div>
+        <div class="bar active"></div>
+        <div class="step" id="step-2">2</div>
+      </div>
+  
+       <!-- Step 1 Form Content -->
+       <div id="step-content-1" class="step-content">
+        <h2 class="modal-title">Our Services</h2>
+        <p class="modal-text">Please select which service you are interested in.</p>
+        <div class="service-selection">
+          <div class="service-box lawnus" onclick="currentService('LawnMowing'); currentServiceModal('LawnMowing')">
+            <div class="service-content">
+              <img src="Images/lawn-quote.png" alt="Lawn Mowing" class="service-icon">
+              <p class="service-title">Lawn Mowing</p>
+          </div>
+          </div>
+          <div class="service-box" onclick="currentService('HedgeTrimming')">
+            <div class="service-content">
+              <img src="Images/garden-quote.png" alt="Web Design" class="service-icon garden-icon">
+              <p>Garden Maintenance</p>
+            </div>
+          </div>
+          <div class="service-box" onclick="currentService('GardenMaintenance')">
+            <div class="service-content">
+              <img src="Images/hedge-quote.png" alt="Marketing" class="service-icon">
+              <p>Hedge Trimming</p>
+            </div> 
+          </div>
+          <div class="service-box" onclick="currentService('Other')">
+            <div class="service-content">
+              <img  alt="Other" class="service-icon">
+              <p>Other</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- Step 2 Form Content (pop up one) -->
+    <div id="step-content-2" class="step-content" style="display:none;">
+      <h2 class="modal-title">Contact Information</h2>
+      <form class="modal-quote-form">
+        <div class="modal-form-row">
+          <input type="text" id="name2" placeholder="Name" required>
+          <input type="number" id="number2" placeholder="Phone Number" required>
+        </div>
+        <input type="email" id="email2" placeholder="Email" required>
+        <input type="text" id="location2" placeholder="Location" required>
+        <textarea id="message2" class="textarea2" placeholder="Details(optional)"></textarea>
+        <button type="submit" id="submit2" onclick="checkParam2()">Get Quote</button>
+    </form>
+    </div>
+
+    <!-- Next Button -->
+    <button id="nextStepButton" class="next-btn">Next Step</button>
+  </div>
+</div>
+
+
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+   <script>
+      hamburger = document.querySelector(".hamburger");
+      const headerLogos = document.querySelector('.header-logos');
+      hamburger.onclick = function (){
+        navBar = document.querySelector(".nav-bar");
+        navBar.classList.toggle("active");
+        headerLogos.classList.toggle("active");
+      }
+
+      window.onload = function() {
+            const home = document.querySelector(".home");
+            const service = document.querySelector(".dropbtn");
+            const about = document.querySelector(".about");
+
+            home.onclick = function() {
+                home.classList.toggle("active");
+            };
+
+            service.onclick = function() {
+                service.classList.toggle("active");
+            };
+
+            about.onclick = function() {
+                about.classList.toggle("active");
+            };
+
+
+            // Arrow button functionality
+      const arrowButton = document.querySelector(".arrow-image");
+      
+      if (window.innerWidth <= 350) {
+        arrowButton.onclick = function() {
+        gsap.to(window, { duration: 1.5, scrollTo: { y: 520 } }); // Scroll down by 400px over 2 seconds
+      };
+    }
+      
+      else if (window.innerWidth <= 400) {
+        arrowButton.onclick = function() {
+        gsap.to(window, { duration: 1.5, scrollTo: { y: 50 } }); // Scroll down by 400px over 2 seconds
+      };
+      }
+     //3000 580 400 350
+      else if (window.innerWidth <= 580) {
+        arrowButton.onclick = function() {
+        gsap.to(window, { duration: 1.5, scrollTo: { y: 630 } }); // Scroll down by 400px over 2 seconds
+      };
+      }
+
+      else if (window.innerWidth <= 3000) {
+        arrowButton.onclick = function() {
+        gsap.to(window, { duration: 1.5, scrollTo: { y: 825 } }); // Scroll down by 400px over 2 seconds
+      };
+      }
+
+
+      const servButton = document.querySelector(".dropbtn");
+      servButton.onclick = function() {
+        console.log('lol');
+        gsap.to(window, { duration: 1.0, scrollTo: { y: 1425 } }); // Scroll down by 400px over 2 seconds
+      };
+    };
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const t1 = document.querySelector('.t1');
+    const t2 = document.querySelector('.t2');
+    const t3 = document.querySelector('.t3');
+    const t4 = document.querySelector('.t4');
+    const t5 = document.querySelector('.t5');
+    const t6 = document.querySelector('.t6');
+
+
+
+    let currentIndex = 0;
+    
+
+    console.log('t1 transform:', t1.style.transform);
+      console.log('t2 transform:', t2.style.transform);
+      console.log('t3 transform:', t3.style.transform);
+    let lol = 0; // Define lol globally or in the relevant context
+    t2.classList.add('active');
+    t2.style.transform = 'translateX(0%) scale(0.9)';
+    let stopRight = false;
+    let stopLeft = false;
+    function moveRight() {
+      console.log(lol);
+      console.log('right');
+      console.log(stopRight);
+      if(!stopRight){
+        stopLeft = false;
+        
+        if(lol % 6 === -1){
+          console.log('Move right 0');
+          t1.style.transform ='translateX(0%) scale(0.8)';  // middle + 100%
+              t2.style.transform ='translateX(0%) scale(0.9)';
+              t3.style.transform ='translateX(0%) scale(0.8)';
+
+              t3.classList.remove('active');
+              t2.classList.add('active');
+
+        }
+        if (lol % 6 === 0) {
+          console.log('Move right 1')
+          t2.classList.remove('active');
+
+          //t1 initial 5%
+            
+            t1.style.transform ='translateX(100%) scale(0.9)'; //move to the right one spot + make it larger
+            t2.style.transform ='translateX(100%) scale(0.8)'; //move to the right in slow speed one spot
+            t3.style.transform ='translateX(200%) scale(0.8)'; //move to the right quickly one spot
+           
+            t4.style.left = '200%';
+            t5.style.left = '200%';
+            
+            t6.style.left = '-30%'; //set t6 to left of the screen
+            t6.style.transform ='translateX(116%) scale(0.8)'; //move to the right with slight speed
+           t1.classList.add('active'); //for opacity
+           stopRight = false;
+           
+        }
+
+        if (lol % 6 === 1) {
+          t1.classList.remove('active');
+
+          
+            t1.style.transform ='translateX(200%) scale(0.8)';  // middle + 100%
+            t2.style.transform ='translateX(235%) scale(0.8)'; //right + 135%
+            t6.style.transform ='translateX(216%) scale(0.9)'; //left + 100%
+           // t3.style.left = '200%';
+            t4.style.left = '200%';
+
+
+            t5.style.left = '-30%'; //upcoming copy paste
+            t5.style.transform ='translateX(116%) scale(0.8)' //upcoming copy paste
+            t6.classList.add('active');
+            
+        }
+
+        if (lol % 6 === 2) {
+           // t2.style.left = '200%';
+           // t3.style.left = '200%';
+            
+            t6.style.transform ='translateX(316%) scale(0.8)';
+            t5.style.transform = 'translateX(216%) scale(0.9)';
+            t1.style.transform ='translateX(335%) scale(0.8)';
+
+             
+
+           
+
+            t4.style.left = '-30%'; //upcoming copy paste
+            t4.style.transform ='translateX(116%) scale(0.8)' //upcoming copy paste
+
+            t5.classList.add('active');
+            t6.classList.remove('active');
+        }
+
+        if (lol % 6 === 3) {
+            //t1.style.left = '200%';
+            // t2.style.left = '200%';
+        
+
+
+            t6.style.transform ='translateX(451%) scale(0.8)';
+            t5.style.transform = 'translateX(316%) scale(0.8)';
+            t4.style.transform ='translateX(216%) scale(0.9)';
+           
+
+
+            t4.classList.add('active');
+            t5.classList.remove('active');
+
+            stopRight = true;
+        }
+        lol++; // Increment to continue cycling positions
+      }
+    }
+
+
+
+    function moveLeft() {
+      console.log(lol);
+      console.log('left');
+      console.log(stopLeft);
+    if(!stopLeft){
+    //console.log('t1 left:', t1.style.left);
+      stopRight = false;
+      console.log(lol);
+      if (lol % 6 === 4) {
+
+
+        //console.log('move left');
+
+
+
+            t6.style.transform ='translateX(316%) scale(0.8)';
+            t5.style.transform = 'translateX(216%) scale(0.9)';
+            t4.style.transform ='translateX(116%) scale(0.8)';
+
+            t5.classList.add('active');
+            t4.classList.remove('active');
+      }    
+
+       else if (lol % 6 === 3) {
+
+
+        //console.log('move left2');
+
+
+
+        t1.style.transform ='translateX(200%) scale(0.8)';  // middle + 100%
+        t5.style.transform ='translateX(116%) scale(0.8)'; //right + 135%
+        t6.style.transform ='translateX(216%) scale(0.9)'; //left + 100%
+
+        t4.style.transform ='translateX(-30%) scale(0.8)';
+
+        t6.classList.add('active');
+        t5.classList.remove('active');
+        
+        } 
+
+        else if (lol % 6 === 2) {
+
+          //console.log('move left3');
+
+
+
+          t1.style.transform ='translateX(100%) scale(0.9)';  // middle + 100%
+          t2.style.transform ='translateX(100%) scale(0.8)';
+          t6.style.transform ='translateX(116%) scale(0.8)'; //left + 100%
+
+          t5.style.transform ='translateX(-30%) scale(0.8)';
+
+          t1.classList.add('active');
+          t6.classList.remove('active');
+          
+          } 
+
+          else if (lol % 6 === 1) {
+
+              console.log('move left4');
+
+
+
+              t1.style.transform ='translateX(0%) scale(0.8)';  // middle + 100%
+              t2.style.transform ='translateX(0%) scale(0.9)';
+              t3.style.transform ='translateX(0%) scale(0.8)'; //left + 100%
+
+              t6.style.transform ='translateX(-30%) scale(0.8)';
+
+              t2.classList.add('active');
+              t1.classList.remove('active');
+              
+              } 
+
+              else if (lol % 6 === 0) {
+
+                console.log('move left5');
+
+
+
+               
+                t2.style.transform ='translateX(-100%) scale(0.8)';
+                t3.style.transform ='translateX(-100%) scale(0.9)'; //left + 100%
+
+                t1.style.transform ='translateX(-146%) scale(0.8)';
+
+                t3.classList.add('active');
+                t2.classList.remove('active');
+                stopLeft = true;
+              }
+              lol--;
+            }
+
+}
+
+
+
+    // Arrow Navigation
+    document.getElementById('leftArrow').addEventListener('click', function () {
+        currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+        moveLeft(currentIndex);
+    });
+
+    document.getElementById('rightArrow').addEventListener('click', function () {
+        currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+        moveRight(currentIndex);
+    });
+
+
+    document.getElementById('leftArrow2').addEventListener('click', function () {
+        currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+        moveLeft(currentIndex);
+    });
+
+    document.getElementById('rightArrow2').addEventListener('click', function () {
+        currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+        moveRight(currentIndex);
+    });
+});
+
+      
+    </script>
+    
+</body>
+</html>
