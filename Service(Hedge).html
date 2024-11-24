@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeMow -Hedge Trimming Service</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0eddc;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #416c29;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            
+        }
+
+        .logo img {
+            height: 190px;
+            width: auto;
+        }
+
+        /* Navigation */
+        .nav-bar ul {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-bar ul li a {
+            display: block;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .nav-bar ul li a:hover {
+            opacity: 75%;
+        }
+
+        .nav-bar ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-bar ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger .line {
+                width: 30px;
+                height: 3px;
+                background: black;
+                margin: 6px 0;
+            }
+
+            .nav-bar {
+                height: 0;
+                position: absolute;
+                top: 130px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                transition: 0.5s;
+                overflow: hidden;
+                background-color: rgb(185, 88, 88);
+            }
+
+            .nav-bar.active {
+                height: 300px;
+                transition: height 0.5s ease-in-out;
+            }
+
+            .nav-bar ul {
+                display: block;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .nav-bar.active ul {
+                opacity: 1;
+            }
+        }
+         /* Main section */
+         .main-section {
+            max-width: 1100px;
+            margin: 120px auto 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .main-section h1, .main-section h2 {
+            transition: color 0.3s ease;
+        }
+
+        .main-section h1:hover, .main-section h2:hover {
+            color: #145227;
+        }
+
+        .main-section h1 {
+            font-size: 30px;
+            color: #416c29;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .main-section h2 {
+            font-size: 22px;
+            color: #416c29;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .main-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Service image */
+        .service-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            padding: 5px;
+            text-align: center;
+            background-color: #335f21;
+            color: white;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            font-size: small;
+        }
+
+
+        .faq-section {
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 30px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item h3 {
+            background-color: #416c29;
+            color: white;
+            padding: 10px;
+            border-radius: 6px 6px 0 0;
+            margin: -15px -15px 15px -15px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .faq-item p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about {
+            background-color: #f0eddc;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .buy-service-btn {
+            position: fixed;
+            bottom: 45px;
+            right: 20px;
+            background-color: #335f21; /* Vibrant green */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 100px;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-service-btn:hover {
+            background-color: #113a1c; /* Slightly darker green on hover */
+        }
+
+        /* Pop-Up Modal Styling */
+        .popup-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .popup-content h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #113a1c;
+        }
+
+        .popup-content p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #335f21; /* Vibrant green */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .popup-content button:hover {
+            background-color: #113a1c;
+        }
+
+        .popup-content .contact-btn {
+            background-color: #335f21; /* Vibrant orange */
+            color: #ffffff;
+            margin-left: 10px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-content .contact-btn:hover {
+            background-color: #113a1c; /* Darker orange on hover */
+        }
+                /* Scrollbar Styling for Webkit Browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Background color of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #416c29; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #0c491c; /* Color when hovering over the scrollbar */
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thick;
+            scrollbar-color: #416c29 #f1f1f1;
+        }
+
+
+
+        
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Video/WElgrb.png" alt="Your Company Logo">
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <p>
+            <a href="#home" style="color: #3c8c44;">Home</a>
+            <a> / </a>
+            <span>Lawn Care</span>
+        </p>
+
+        <h1>HEDGE TRIMMING SERVICES FOR BUSINESS PROPERTY OWNERS</h1>
+
+        <div class="service-image">
+            <img src="Video/Mower.png" alt="Lawn Mowing Image">
+        </div>
+
+        <p>Achieve a clean and professional look for your business property with expert hedge trimming services.</p>
+
+        <h2>HEDGE TRIMMING SERVICES</h2>
+        <p>Whether you need a one-time trim or regular maintenance, our hedge trimming services are customized to meet your specific needs. We work around your schedule to ensure your hedges always look neat and well-maintained, contributing to the overall appeal of your property.</p>
+
+        <h2>SHAPE & STYLE</h2>
+        <p>Our team of experts will help shape and style your hedges to suit the overall aesthetic of your property. Whether you're looking for a clean, geometric design or a more natural shape, we’ve got you covered.</p>
+
+        <h2>HEALTHY GROWTH</h2>
+        <p>Proper trimming promotes healthier, fuller growth of your hedges. We ensure that all trims are done at the correct times of the year, optimizing growth and maintaining the structural integrity of your plants.</p>
+
+        <h2>PRUNING & MAINTENANCE</h2>
+        <p>We offer pruning services in addition to regular trimming to remove dead or damaged branches. Pruning encourages new growth, allowing your hedges to thrive throughout the year.</p>
+    
+    </section>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Hedge Trimming Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>How often should I trim my hedges?</h3>
+                <p>The frequency of trimming depends on the type of hedge and desired look. Most hedges should be trimmed two to three times per year, with more frequent trimming for faster-growing varieties. It's important to avoid trimming in extreme weather conditions to protect plant health.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why is proper hedge trimming important?</h3>
+                <p>Proper trimming enhances the appearance of your property, boosts plant health, and prevents overgrowth. Regular trimming helps to avoid dense, tangled growth and allows sunlight to reach all parts of the hedge, promoting uniform growth.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can trimming too much damage my hedges?</h3>
+                <p>Yes, excessive trimming can damage the structure and health of your hedges. It's important to follow the proper pruning guidelines to avoid cutting into old wood, which may not regenerate as well. Our experts are trained to handle your hedges with care to avoid harm.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2>About Us</h2>
+        <p>WeMow is a trusted lawn care provider with a focus on delivering tailored services for business property owners. We believe in the importance of proper lawn maintenance to create an inviting outdoor space.</p>
+
+    </div>
+
+    <footer>
+        &copy; 2024 WeMow. All Rights Reserved.
+    </footer>
+
+    <!-- Buy Service Button -->
+    <button class="buy-service-btn" onclick="togglePopup()">Buy Service!</button>
+
+    <!-- Pop-Up Modal -->
+    <div class="popup-modal" id="popupModal">
+        <div class="popup-content">
+            <h3>Ready to Book a Lawn Care Service?</h3>
+            <p>Contact us now to get started on your perfect lawn!</p>
+            <button onclick="togglePopup()">Close</button>
+            <button onclick="redirectToContact()" class="contact-btn">Contact Us</button>
+        </div>
+    </div>
+
+    <script>
+
+        function togglePopup() {
+            const popup = document.getElementById('popupModal');
+            popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+        }
+        function redirectToContact() {
+            window.location.href = 'ContactUs.html'; // Replace with contact page URL
+        }
+    </script>
+</body>
+</html>

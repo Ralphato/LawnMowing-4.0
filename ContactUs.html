@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('/Video/Lawn.png') no-repeat center center fixed;
+            background-size: cover ;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: relative;
+            background-color: #335f21; /* Dark green */
+            padding: 2px;
+            text-align: center;
+            z-index: 15;
+        }
+        
+        .navbar h1 {
+            color: #F5F0E1;
+            font-size: 24px;
+            margin-bottom: 0px;
+            text-align: center;
+         
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: #F5F0E1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            z-index: 11;
+           
+        }
+
+        .shadow-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 10; /* Ensure it sits below the container content */
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            box-shadow: #000000;
+        }
+
+        form {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        input, select, textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #335f21;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #113a1c;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        footer {
+            padding: 5px;
+            text-align: center;
+            background-color: #335f21;
+            color: white;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            font-size: small;
+            z-index: 13;
+        }
+
+        /* Scrollbar Styling for Webkit Browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #d4cfc0; /* Background color of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #335f21; /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #335f21; /* Color when hovering over the scrollbar */
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thick;
+            scrollbar-color: #335f21 #d4cfc0;
+        }
+
+        *, *::after, *::before {
+        box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>WeMow</h1>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">BLOG</a></li>
+        </ul>
+    </div>
+
+    <div class="shadow-overlay"></div>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Your first name" required>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Your last name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Street, City, State, ZIP Code">
+
+            <h2>Service Details</h2>
+            <label for="service-type">What type of work do you need done?</label>
+            <select id="service-type" name="service-type" required>
+                <option value="">Choose an option</option>
+                <option value="lawn-care">Lawn Care</option>
+                <option value="landscaping">Hedge Trimming</option>
+                <option value="maintenance">Garden Maintenance</option>
+            </select>
+
+            <label for="start-date">When would you like to start the project?</label>
+            <select id="start-date" name="start-date" required>
+                <option value="">Choose an option</option>
+                <option value="asap">As Soon As Possible</option>
+                <option value="1-month">Within a Month</option>
+                <option value="later">Later</option>
+            </select>
+
+            <label for="overgrown">Is your property overgrown?</label>
+            <select id="overgrown" name="overgrown" required>
+                <option value="">Choose an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="budget">What is your budget range?</label>
+            <select id="budget" name="budget">
+                <option value="">Choose an option</option>
+                <option value="low">Below $500</option>
+                <option value="medium">$500 - $1000</option>
+                <option value="high">Above $1000</option>
+            </select>
+
+            <label for="finance">Do you need financing options?</label>
+            <select id="finance" name="finance">
+                <option value="">Choose an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="referral">How did you hear about us?</label>
+            <select id="referral" name="referral">
+                <option value="">Choose an option</option>
+                <option value="friend">Friend</option>
+                <option value="ad">Advertisement</option>
+                <option value="search-engine">Search Engine</option>
+            </select>
+
+            <label for="upload">Upload Images (optional)</label>
+            <input type="file" id="upload" name="upload" accept="image/*">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+      
+    <footer>
+        &copy; 2024 WeMow. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
