@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar using HTML, CSS & JavaScript</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          text-decoration: none;
+          font-family: "Google Sans Regular";
+          box-sizing: border-box;
+      }
+
+      body {
+          background: #fefefe;
+      }
+
+      header {
+          width: 100%;
+          height: 80px;
+          background: #11101b;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 100px;
+      }
+
+      .logo {
+          font-size: 28px;
+          font-weight: bold;
+          color: #fefefe;
+      }
+
+      .hamburger {
+          display: none;
+      }
+
+      .nav-bar ul {
+          display: flex;
+      }
+
+      .nav-bar ul li a {
+          display: block;
+          color: #fefefe;
+          font-size: 20px;
+          padding: 10px 25px;
+          border-radius: 50px;
+          transition: 0.2s;
+          margin: 0 5px;
+      }
+
+      .nav-bar ul li a:hover {
+          color: #11101b;
+          background: #fefefe;
+      }
+
+      .nav-bar ul li a.active {
+          color: #11101b;
+          background: #fefefe;
+      }
+
+      @media only screen and (max-width: 1320px) {
+          header {
+              padding: 0 50px;
+          }
+      }
+  </style>
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">Soft Landing</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
